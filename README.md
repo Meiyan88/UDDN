@@ -3,9 +3,13 @@ This repository contains the code of UDDN
 
 # How to use
 ### UDDN train/test
-```python train.py --dataroot ./datasets/your_dataset --name yourown_name --model UDDN```
-
-```python train.py --dataroot ./datasets/your_dataset --name yourown_name --model UDDN```
+- Train a model:
+```
+python train.py --dataroot ./datasets/your_dataset --name yourown_name --model UDDN
+```
+- Test a model:
+```
+python train.py --dataroot ./datasets/your_dataset --name yourown_name --model UDDN```
 ### pix2pix train/test
 - Download a pix2pix dataset (e.g.[facades](http://cmp.felk.cvut.cz/~tylecr1/facade/)):
 ```bash
