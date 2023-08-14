@@ -2,6 +2,10 @@
 This repository contains the code of UDDN
 
 # How to use
+### UDDN train/test
+python train.py --dataroot ./datasets/your_dataset --name yourown_name --model UDDN
+
+python train.py --dataroot ./datasets/your_dataset --name yourown_name --model UDDN
 ### pix2pix train/test
 - Download a pix2pix dataset (e.g.[facades](http://cmp.felk.cvut.cz/~tylecr1/facade/)):
 ```bash
@@ -22,3 +26,27 @@ python test.py --dataroot ./datasets/facades --name facades_pix2pix --model pix2
 ```
 - The test results will be saved to a html file here: `./results/facades_pix2pix/test_latest/index.html`. You can find more scripts at `scripts` directory.
 - To train and test pix2pix-based colorization models, please add `--model colorization` and `--dataset_mode colorization`. See our training [tips](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/blob/master/docs/tips.md#notes-on-colorization) for more details.
+
+### CycleGAN train/test
+- Download a CycleGAN dataset (e.g. maps):
+```bash
+bash ./datasets/download_cyclegan_dataset.sh maps
+```
+- To view training results and loss plots, run `python -m visdom.server` and click the URL http://localhost:8097.
+- Train a model:
+```bash
+
+
+#!./scripts/train_cyclegan.sh
+python train.py --dataroot ./datasets/maps --name maps_cyclegan --model cycle_gan
+```
+To see more intermediate results, check out `./checkpoints/maps_cyclegan/web/index.html`.
+- Test the model:
+```bash
+#!./scripts/test_cyclegan.sh
+python test.py --dataroot ./datasets/maps --name maps_cyclegan --model cycle_gan
+```
+
+
+
+- The test results will be saved to a html file here: `./results/maps_cyclegan/latest_test/index.html`.
