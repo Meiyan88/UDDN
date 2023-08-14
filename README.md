@@ -9,7 +9,8 @@ python train.py --dataroot ./datasets/your_dataset --name yourown_name --model U
 ```
 - Test a model:
 ```
-python train.py --dataroot ./datasets/your_dataset --name yourown_name --model UDDN```
+python train.py --dataroot ./datasets/your_dataset --name yourown_name --model UDDN
+```
 ### pix2pix train/test
 - Download a pix2pix dataset (e.g.[facades](http://cmp.felk.cvut.cz/~tylecr1/facade/)):
 ```bash
